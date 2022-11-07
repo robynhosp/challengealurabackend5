@@ -38,6 +38,7 @@ class VideoServiceImplTest {
 	
 	Optional<Video> optVideo;
 	Optional<Categoria> optCategoria;
+	List<Video> listVideo = new ArrayList<Video>();
 	
 	@SuppressWarnings("deprecation")
 	@BeforeEach
@@ -51,6 +52,7 @@ class VideoServiceImplTest {
 	    categoria.setTitulo("Title");
 	    categoria.setCor("cor");
 	    optCategoria = Optional.of(categoria);
+	    listVideo.add(video);
 	}
 	
 	@Test
@@ -60,6 +62,24 @@ class VideoServiceImplTest {
 		Video video2 = videoService.getVideo(1);
 		assertEquals(video2.getTitulo(), titulo, "Teste de igualdade");
 	}
+	
+	@Test
+	void testGetVideoByTitulo() {	 
+		Mockito.when(videoRepository.findVideoPorTitulo(Mockito.any())).thenReturn(listVideo);
+		String titulo = "Title";
+		List<Video> video2 = videoService.getVideos("");
+		assertEquals(video2.get(0).getTitulo(), titulo, "Teste de igualdade");
+	}
+	
+	@Test
+	void testGetVideoByTituloEmpty() {	 
+		listVideo.remove(0);
+		Mockito.when(videoRepository.findVideoPorTitulo(Mockito.any())).thenReturn(listVideo);
+		Assertions.assertThrows(NotFoundException.class, () -> {
+			videoService.getVideos("");
+		});
+	}
+	
 	
 	@Test
 	void testGetVideoByIdNotExists() {	 

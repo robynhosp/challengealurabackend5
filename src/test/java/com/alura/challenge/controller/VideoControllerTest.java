@@ -52,12 +52,67 @@ class VideoControllerTest {
 		List<Video> listVideos = new ArrayList<Video>();
 		listVideos.add(video_1);
 		listVideos.add(video_2);
-		Iterable<Video> videos = listVideos;
-        when(videoServiceImpl.getVideos()).thenReturn(videos);
+        when(videoServiceImpl.getVideos()).thenReturn(listVideos);
          
-        Iterable<Video> videosRet = videoController.listVideos();
-        Iterator<Video> it = videosRet.iterator();
-        Video video_3 = (Video) it.next();
+        List<Video> videosRet = videoController.listVideos("");
+        Video video_3 = (Video) videosRet.get(0);
+         
+        assertEquals(video_1.getDescricao(), video_3.getDescricao(), "Teste de igualdade");
+	}
+	
+	@Test
+	void testListVideosParameterNull() {
+		MockHttpServletRequest request = new MockHttpServletRequest();
+        RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
+        Video video_1 = new Video();
+        video_1.setDescricao("descricao");
+		Video video_2 = new Video();
+		video_2.setDescricao("descricao");
+		List<Video> listVideos = new ArrayList<Video>();
+		listVideos.add(video_1);
+		listVideos.add(video_2);
+        when(videoServiceImpl.getVideos()).thenReturn(listVideos);
+         
+        List<Video> videosRet = videoController.listVideos(null);
+        Video video_3 = (Video) videosRet.get(0);
+         
+        assertEquals(video_1.getDescricao(), video_3.getDescricao(), "Teste de igualdade");
+	}
+	
+	@Test
+	void testListVideosParameterBlank() {
+		MockHttpServletRequest request = new MockHttpServletRequest();
+        RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
+        Video video_1 = new Video();
+        video_1.setDescricao("descricao");
+		Video video_2 = new Video();
+		video_2.setDescricao("descricao");
+		List<Video> listVideos = new ArrayList<Video>();
+		listVideos.add(video_1);
+		listVideos.add(video_2);
+        when(videoServiceImpl.getVideos()).thenReturn(listVideos);
+         
+        List<Video> videosRet = videoController.listVideos(" ");
+        Video video_3 = (Video) videosRet.get(0);
+         
+        assertEquals(video_1.getDescricao(), video_3.getDescricao(), "Teste de igualdade");
+	}
+	
+	@Test
+	void testListVideosByTitulo() {
+		MockHttpServletRequest request = new MockHttpServletRequest();
+        RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
+        Video video_1 = new Video();
+        video_1.setDescricao("descricao");
+		Video video_2 = new Video();
+		video_2.setDescricao("descricao");
+		List<Video> listVideos = new ArrayList<Video>();
+		listVideos.add(video_1);
+		listVideos.add(video_2);
+        when(videoServiceImpl.getVideos(Mockito.anyString())).thenReturn(listVideos);
+         
+        List<Video> videosRet = videoController.listVideos("nome");
+        Video video_3 = (Video) videosRet.get(0);
          
         assertEquals(video_1.getDescricao(), video_3.getDescricao(), "Teste de igualdade");
 	}

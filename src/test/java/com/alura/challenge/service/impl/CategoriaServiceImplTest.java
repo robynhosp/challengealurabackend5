@@ -85,8 +85,7 @@ class CategoriaServiceImplTest {
 		List<Video> listVideos = new ArrayList<Video>();
 		listVideos.add(video_1);
 		listVideos.add(video_2);
-		Iterable<Video> videos = listVideos;
-		Mockito.when(videoRepository.findByCategoriaId(1)).thenReturn(videos);
+		Mockito.when(videoRepository.findByCategoriaId(1)).thenReturn(listVideos);
 		assertNotNull("Teste de Objeto Not Null", categoriaService.getCategoriaVideos(1));
 	}
 	

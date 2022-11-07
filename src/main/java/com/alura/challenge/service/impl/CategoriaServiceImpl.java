@@ -40,7 +40,7 @@ public class CategoriaServiceImpl implements CategoriaService {
 		if(!categoria.isPresent()) {
 			throw new NotFoundException("Categoria não encontrada");
 		}
-		Iterable<Video> videos = videoRepository.findByCategoriaId(id);
+		List<Video> videos = videoRepository.findByCategoriaId(id);
 		List<VideoDTO> videosDTO = new ArrayList<VideoDTO>();
 		CategoriaDTO c = new CategoriaDTO();
 		c.setId(categoria.get().getId());

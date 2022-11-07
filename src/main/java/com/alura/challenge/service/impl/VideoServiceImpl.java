@@ -1,6 +1,9 @@
 package com.alura.challenge.service.impl;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,8 +35,17 @@ public class VideoServiceImpl implements VideoService {
 		return video.get();
 	}
 
-	public Iterable<Video> getVideos() {
-		return videoRepository.findAll();
+	public List<Video> getVideos() {
+		return StreamSupport.stream(videoRepository.findAll().spliterator(), false).collect(Collectors.toList());
+	}
+	
+	public List<Video> getVideos(String titulo) {
+		System.out.println(titulo);
+		List<Video> video = videoRepository.findVideoPorTitulo(titulo);
+		if(video.isEmpty()) {
+			throw new NotFoundException("Não encontrado");
+		}
+		return video;
 	}
 
 	public Message addVideo(Integer categoriaId, String titulo, String descricao, String url)
