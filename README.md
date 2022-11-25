@@ -1,4 +1,19 @@
-# challengealurabackend5
+# Challenge Alura
+
+Alura Challenge - Back-End 5.a Edição
+
+| :placard: Vitrine.Dev |     |
+| -------------  | --- |
+| :sparkles: Nome        | **Alura Challenge - Back-End 5.a Edição**
+| :label: Tecnologias | java, springboot, mysql
+| :rocket: URL         | [https://url-deploy.com.br](https://github.com/robynhosp/challengealurabackend5)
+| :fire: Desafio     | [https://url-do-desafio.com.br](https://www.alura.com.br/challenges/back-end-5?host=https://cursos.alura.com.br)
+
+<!-- Inserir imagem com a #vitrinedev ao final do link -->
+![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
+
+## Detalhes do projeto
+
 Alura Challenge - Back-End 5.a Edição
 
 Crie um novo projeto, do início ao fim, em apenas 4 semanas durante o Challenge Back-End 5° Edição
