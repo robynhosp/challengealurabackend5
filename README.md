@@ -6,8 +6,8 @@ Alura Challenge - Back-End 5.a Edição
 | -------------  | --- |
 | :sparkles: Nome        | **Alura Challenge - Back-End 5.a Edição**
 | :label: Tecnologias | java, springboot, mysql
-| :rocket: URL         | [https://url-deploy.com.br](https://github.com/robynhosp/challengealurabackend5)
-| :fire: Desafio     | [https://url-do-desafio.com.br](https://www.alura.com.br/challenges/back-end-5?host=https://cursos.alura.com.br)
+| :rocket: URL         | [https://github.com/robynhosp/challengealurabackend5]
+| :fire: Desafio     | [https://www.alura.com.br/challenges/back-end-5?host=https://cursos.alura.com.br]
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
 ![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
