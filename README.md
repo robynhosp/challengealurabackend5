@@ -10,7 +10,7 @@ Alura Challenge - Back-End 5.a Edição
 | :fire: Desafio     | https://www.alura.com.br/challenges/back-end-5?host=https://cursos.alura.com.br
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
-![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
+![]([https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto](https://www.alura.com.br/assets/img/challenges/bi/challenges-logo-2.1659112904.svg)#vitrinedev)
 
 ## Detalhes do projeto
 
